@@ -6,9 +6,16 @@ python setup.py build_ext --inplace
 # Download and build models
 echo 'Unpack src files...'
 if [ ! -e swe-pipeline-ud2.tar.gz ]; then
-    wget http://mumin.ling.su.se/projects/efselab/swe-pipeline-ud2.tar.gz
+    wget https://efselab.s3.eu-north-1.amazonaws.com/swe-pipeline-ud2.tar.gz
 fi
 tar xvzf swe-pipeline-ud2.tar.gz
+rm swe-pipeline-ud2.tar.gz
+
+if [ ! -e efselab_data.tar.gz ]; then
+    wget https://efselab.s3.eu-north-1.amazonaws.com/efselab_data.tar.gz
+fi
+tar xvzf efselab_data.tar.gz
+rm efselab_data.tar.gz
 
 echo 'Build and train suc and suc-ne models...'
 python build_suc.py --skip-generate --python --n-train-fields 2

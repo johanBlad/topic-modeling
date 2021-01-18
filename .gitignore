@@ -3,17 +3,14 @@
 .ipynb_checkpoints/**
 .ipynb_checkpoints/*-checkpoint.ipynb
 __pycache__/
-*.pkl
 .ipynb_checkpoints/preprocess-checkpoint.ipynb
-var/*
-metric_log/*
-efselab_mod/*cpython-38-darwin.so
-efselab_mod/udt-en-retag.tab
+
 
 src/efselabwrapper/bin/*
 src/efselabwrapper/*.so
 
 src/setup/build
+src/setup/data
 src/setup/*.so
 src/setup/pysuc_ne.c
 src/setup/pysuc.c
