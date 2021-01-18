@@ -6,6 +6,7 @@
 __pycache__/
 .ipynb_checkpoints/preprocess-checkpoint.ipynb
 
+src/mallet/
 
 src/efselabwrapper/bin/*
 src/efselabwrapper/*.so
