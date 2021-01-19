@@ -23,11 +23,10 @@ if [ ! -d yttr-2018-2021.text ]; then
     rm yttr-2018-2021.text.tar.gz
 fi
 
-cd preprocessed
-
-if [ ! -f sv_news_articles_50000.pickle ]; then
-    wget https://efselab.s3.eu-north-1.amazonaws.com/sv_news_articles_50000.pickle.gz
-    gunzip sv_news_articles_50000.pickle.gz
+if [ ! -d preprocessed_corpora ]; then
+    wget https://efselab.s3.eu-north-1.amazonaws.com/preprocessed_corpora.tar.gz
+    tar xvzf preprocessed_corpora.tar.gz
+    rm preprocessed_corpora.tar.gz
 fi
 
 

@@ -18,13 +18,14 @@ def run_annotation_pipeline(data):
     return [annotate_document(doc, models) for doc in data]
 
 
-def run_processing_pipeline(df, pos_tags):
+def run_processing_pipeline(data, pos_tags):
     """
     INPUT: DataFrame (corpus)\n
     OUTPUT: list of list of string (documents as lists of of lemmas, filtered on POS and stopwords)
     """
     models = get_models()
-    return [process_document(r[1]["content_text"], models, pos_tags) for r in df.iterrows()]
+    return [process_document(doc, models, pos_tags) for doc in data]
+
 
 
 def run_processing_pipeline_ner(data, pos_tags):
@@ -53,8 +54,8 @@ def annotate_document(doc, models):
 
 def process_document(doc, models, pos_tags):
     doc_sentences = annotate_sentences(doc, models)
-
     # Flatten document of sentences of tokens into document of token.lemma, if token should be kept
+    
     return [
         clean_word(token[1])
         for sentence in doc_sentences
@@ -91,7 +92,7 @@ def clean_document(doc):
 
 
 def keep_token(token, pos_tags):
-    if token[2] in pos_tags and token[1].lower().strip() not in stopwords and len(token[1]) > 1 and token[1].islower():
+    if token[2] in pos_tags and token[1].lower().strip() not in stopwords and len(token[1]) > 1:
         return True
     else:
         return False
