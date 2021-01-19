@@ -27,8 +27,7 @@ cd preprocessed
 
 if [ ! -f sv_news_articles_50000.pickle ]; then
     wget https://efselab.s3.eu-north-1.amazonaws.com/sv_news_articles_50000.pickle.gz
-    tar xvzf sv_news_articles_50000.pickle.gz
-    rm sv_news_articles_50000.pickle.gz
+    gunzip sv_news_articles_50000.pickle.gz
 fi
 
 
