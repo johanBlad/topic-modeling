@@ -28,7 +28,7 @@ Install the necessary Python dependencies on your machine, or in a virtual envir
 
 `$ pip install -r requirements.txt`
 
-There are two topic modeling algorithms avaialble, NMF and LDA. LDA builds on an external Java package (MALLET) and needs to be set up. To do this, make sure you have the following installed:
+There are two topic modeling algorithms avaialble, NMF and LDA. LDA builds on an external Java package (MALLET) and needs to be set up in order to be used. To do this, make sure you have the following installed:
 
 - JDK
 - Ant
